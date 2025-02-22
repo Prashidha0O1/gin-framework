@@ -16,14 +16,14 @@ export default function Home() {
           <span className="font-bold text-2xl">Gin</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#features">
-            Features
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="https://gin-gonic.com/docs/">
+            Documenatation
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="/blog">
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="https://gin-gonic.com/blog/">
             Blog
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#github">
-            GitHub
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="https://github.com/gin-gonic/gin/releases">
+            Download
           </Link>
         </nav>
       </header>
