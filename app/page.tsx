@@ -13,9 +13,6 @@ export default function Home() {
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="#features">
             Features
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#performance">
-            Performance
-          </Link>
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="/blog">
             Blog
           </Link>
@@ -28,7 +25,7 @@ export default function Home() {
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 relative overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img
-              src="/placeholder.svg?height=1080&width=1920"
+              src="https://drinkinghobby.com/wp-content/uploads/2017/10/IMG_5986.jpg"
               alt="Crystal clear ice"
               className="w-full h-full object-cover opacity-20"
             />
@@ -51,7 +48,7 @@ export default function Home() {
                   </Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link href="/docs">Learn More</Link>
+                  <Link href="https://gin-gonic.com/docs/">Learn More</Link>
                 </Button>
               </div>
             </div>
@@ -135,7 +132,7 @@ export default function Home() {
         </section>
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-zinc-500 dark:text-zinc-400">© 2024 Gin Framework. All rights reserved.</p>
+        <p className="text-xs text-zinc-500 dark:text-zinc-400">© 2025 Gin Framework. All rights reserved.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4" href="#">
             Terms of Service
@@ -149,7 +146,13 @@ export default function Home() {
   )
 }
 
-function FeatureCard({ icon, title, description }) {
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
     <div className="flex flex-col items-center text-center">
       <div className="mb-4 rounded-full bg-zinc-100 p-2 dark:bg-zinc-800">{icon}</div>
