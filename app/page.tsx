@@ -2,6 +2,12 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap, Shield, Layers, CheckCircle, Code, PenTool, Rocket } from "lucide-react"
 
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -22,38 +28,39 @@ export default function Home() {
         </nav>
       </header>
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 relative overflow-hidden">
-          <div className="absolute inset-0 z-0">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 relative">
+          <div className="absolute inset-0">
             <img
               src="https://drinkinghobby.com/wp-content/uploads/2017/10/IMG_5986.jpg"
               alt="Crystal clear ice"
-              className="w-full h-full object-cover opacity-20"
+              className="w-full h-full object-cover"
             />
           </div>
           <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-transparent bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text">
                   Gin: The fastest full-featured web framework for Go
                 </h1>
-                <p className="mx-auto max-w-[700px] text-zinc-500 md:text-xl dark:text-zinc-400">
+                <p className="mx-auto max-w-[700px] text-transparent bg-gradient-to-r from-blue-300 to-blue-600 bg-clip-text md:text-xl font-medium">
                   Crystal clear. Fast. Productive. Up to 40 times faster than Martini.
                 </p>
               </div>
               <div className="space-x-4">
-                <Button asChild>
+                <Button className="bg-white text-black hover:bg-white/90" asChild>
                   <Link href="/docs">
                     Get Started
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button variant="outline" asChild>
+                <Button variant="outline" className="border-white text-white hover:bg-white/10" asChild>
                   <Link href="https://gin-gonic.com/docs/">Learn More</Link>
                 </Button>
               </div>
             </div>
           </div>
         </section>
+        {/* Rest of the sections remain unchanged */}
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-zinc-50 dark:bg-zinc-900">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">Features</h2>
@@ -125,7 +132,9 @@ export default function Home() {
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
+                <Link href="https://github.com/gin-gonic/gin">
                 <Button variant="outline">View on GitHub</Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -146,11 +155,6 @@ export default function Home() {
   )
 }
 
-interface FeatureCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
 
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
@@ -161,4 +165,3 @@ function FeatureCard({ icon, title, description }: FeatureCardProps) {
     </div>
   )
 }
-
